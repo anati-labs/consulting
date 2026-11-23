@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anati Labs | Cloud &amp; DevOps Consulting</title>
+  <meta name="description" content="Anati Labs provides remote cloud architecture, Kubernetes, Infrastructure as Code, CI/CD and FinOps consulting for organizations worldwide. Based in Kochi, India.">
+  <link rel="canonical" href="https://consulting.anati.in/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Anati Labs">
+  <meta property="og:title" content="Anati Labs | Cloud &amp; DevOps Consulting">
+  <meta property="og:description" content="Remote cloud architecture, Kubernetes, Infrastructure as Code, CI/CD and FinOps consulting. Based in Kochi, India.">
+  <meta property="og:url" content="https://consulting.anati.in/">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      --ink: #1b2430;
+      --muted: #55616f;
+      --line: #dde3ea;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fa;
+      --accent: #12355b;
+      --accent-hover: #0c2644;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e8edf3;
+        --muted: #a3afbd;
+        --line: #2b3644;
+        --bg: #11171f;
+        --bg-alt: #171f29;
+        --accent: #8db9ea;
+        --accent-hover: #b4d2f3;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-hover); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    section.alt { background: var(--bg-alt); }
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
+    h1 { font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: -.01em; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+    p { margin: 0 0 1em; }
+    .lead { font-size: 1.2rem; color: var(--muted); margin: 0; }
+
+    header { padding: 72px 0 56px; }
+    .brand { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; color: var(--accent); margin-bottom: 1rem; }
+
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+    .contact dt { font-weight: 600; }
+    .contact dd { margin: 0; overflow-wrap: anywhere; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <div class="brand">Anati Labs</div>
+      <h1>Cloud &amp; DevOps consulting</h1>
+      <p class="lead">Remote cloud architecture and platform engineering for organizations worldwide.</p>
+    </div>
+  </header>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Cloud architecture &amp; migration</h3>
+          <p>Architecture design and migration strategy across AWS, Azure, GCP and hybrid environments, including multi-region transformations.</p>
+        </div>
+        <div class="card">
+          <h3>Infrastructure as Code</h3>
+          <p>Repeatable, reviewable infrastructure with Terraform, Ansible and CloudFormation, with standardized modules and state management.</p>
+        </div>
+        <div class="card">
+          <h3>Kubernetes &amp; GitOps</h3>
+          <p>GKE and EKS platforms with GitOps delivery using ArgoCD and Kargo.</p>
+        </div>
+        <div class="card">
+          <h3>DevOps &amp; CI/CD automation</h3>
+          <p>Build and release pipelines, standardized delivery processes, and enablement of DevOps and SRE teams.</p>
+        </div>
+        <div class="card">
+          <h3>FinOps &amp; cost optimization</h3>
+          <p>Visibility into cloud spend and practical changes that reduce it without hurting reliability.</p>
+        </div>
+        <div class="card">
+          <h3>Observability &amp; monitoring</h3>
+          <p>Metrics, logging, tracing and alerting frameworks suited to production workloads.</p>
+        </div>
+        <div class="card">
+          <h3>Security, IAM &amp; secrets</h3>
+          <p>Cloud security, identity and access management, and secrets management.</p>
+        </div>
+        <div class="card">
+          <h3>Networking</h3>
+          <p>Network design for cloud and hybrid environments: VPCs, connectivity, DNS and load balancing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>Anati Labs is a consulting practice based in Kochi, India, founded by Anoop P, a Cloud Architect and DevOps leader with over 20 years of experience designing, implementing and optimizing scalable infrastructure.</p>
+      <p>Recent work includes leading platform engineering for a GCP-based Kubernetes platform, built end to end on Terraform, delivered with GitOps and backed by production-grade observability. That included a full production region migration and the decommissioning of the legacy environment.</p>
+      <p>Engagements are remote, with clients overseas.</p>
+    </div>
+  </section>
+
+  <section id="how" class="alt">
+    <div class="wrap">
+      <h2>How I work</h2>
+      <p>Work is organized either as a <strong>monthly retainer</strong> or as a <strong>fixed-scope project</strong>. Either way, it is invoiced monthly.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <dl>
+        <dt>Email</dt>
+        <dd><a href="mailto:anoop@anati.in">anoop@anati.in</a></dd>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/anoop-p/" rel="noopener">linkedin.com/in/anoop-p</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Anati Labs · Kochi, India</div>
+  </footer>
+
+</body>
+</html>
