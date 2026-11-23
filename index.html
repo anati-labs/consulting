@@ -4,152 +4,310 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anati Labs | Cloud &amp; DevOps Consulting</title>
-  <meta name="description" content="Anati Labs provides remote cloud architecture, Kubernetes, Infrastructure as Code, CI/CD and FinOps consulting for organizations worldwide. Based in Kochi, India.">
+  <meta name="description" content="Anati Labs provides remote cloud architecture, Kubernetes and GitOps, Infrastructure as Code, CI/CD and FinOps consulting for organizations worldwide. Based in Kochi, India.">
+  <meta name="theme-color" content="#0b2239">
   <link rel="canonical" href="https://consulting.anati.in/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Anati Labs">
   <meta property="og:title" content="Anati Labs | Cloud &amp; DevOps Consulting">
-  <meta property="og:description" content="Remote cloud architecture, Kubernetes, Infrastructure as Code, CI/CD and FinOps consulting. Based in Kochi, India.">
+  <meta property="og:description" content="Remote cloud architecture, Kubernetes and GitOps, Infrastructure as Code, CI/CD and FinOps consulting. Based in Kochi, India.">
   <meta property="og:url" content="https://consulting.anati.in/">
   <meta name="twitter:card" content="summary">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Anati Labs",
+    "url": "https://consulting.anati.in/",
+    "description": "Remote cloud architecture and DevOps consulting.",
+    "email": "anoop@anati.in",
+    "address": { "@type": "PostalAddress", "addressLocality": "Kochi", "addressCountry": "IN" },
+    "founder": { "@type": "Person", "name": "Anoop P", "sameAs": "https://www.linkedin.com/in/anoop-p/" }
+  }
+  </script>
+
   <style>
     :root {
-      --ink: #1b2430;
-      --muted: #55616f;
-      --line: #dde3ea;
+      --navy: #0b2239;
+      --navy-2: #123456;
+      --ink: #172233;
+      --muted: #566377;
+      --line: #e1e6ed;
       --bg: #ffffff;
-      --bg-alt: #f5f7fa;
-      --accent: #12355b;
-      --accent-hover: #0c2644;
+      --bg-alt: #f4f7fb;
+      --accent: #0f6fb8;
+      --accent-2: #19a3a0;
+      --card: #ffffff;
+      --shadow: 0 1px 2px rgba(11,34,57,.06), 0 8px 24px rgba(11,34,57,.06);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --ink: #e8edf3;
-        --muted: #a3afbd;
-        --line: #2b3644;
-        --bg: #11171f;
-        --bg-alt: #171f29;
-        --accent: #8db9ea;
-        --accent-hover: #b4d2f3;
+        --ink: #e6ecf3;
+        --muted: #9fadbf;
+        --line: #26344a;
+        --bg: #0d141d;
+        --bg-alt: #111b27;
+        --card: #142030;
+        --accent: #6db4ee;
+        --accent-2: #4fd1c5;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
       }
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
     body {
       margin: 0;
-      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--ink);
       background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
     a { color: var(--accent); }
-    a:hover { color: var(--accent-hover); }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 56px 0; border-top: 1px solid var(--line); }
-    section.alt { background: var(--bg-alt); }
-    h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
-    h1 { font-size: clamp(2rem, 5vw, 2.75rem); letter-spacing: -.01em; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; }
-    h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -.01em; }
     p { margin: 0 0 1em; }
-    .lead { font-size: 1.2rem; color: var(--muted); margin: 0; }
 
-    header { padding: 72px 0 56px; }
-    .brand { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; color: var(--accent); margin-bottom: 1rem; }
+    /* Top bar */
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,34,57,.94);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: .02em; }
+    .logo img { width: 28px; height: 28px; display: block; }
+    .topbar nav { display: flex; gap: 22px; align-items: center; }
+    .topbar nav a { color: rgba(255,255,255,.78); text-decoration: none; font-size: .92rem; }
+    .topbar nav a:hover { color: #fff; }
+    .topbar nav a.cta { color: #fff; border: 1px solid rgba(255,255,255,.35); padding: 6px 14px; border-radius: 6px; }
+    .topbar nav a.cta:hover { background: rgba(255,255,255,.1); }
+    @media (max-width: 640px) { .topbar nav a:not(.cta) { display: none; } }
 
-    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
-    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    /* Hero */
+    .hero {
+      color: #fff;
+      background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 48px 48px,
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 48px 48px,
+        radial-gradient(900px 400px at 85% -10%, rgba(25,163,160,.28), transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+      padding: 96px 0 88px;
+    }
+    .eyebrow { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #7fd9d5; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); max-width: 18ch; margin-bottom: 20px; }
+    .hero p.lead { font-size: 1.2rem; color: rgba(255,255,255,.8); max-width: 60ch; margin-bottom: 32px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: .98rem; border: 1px solid transparent; }
+    .btn-primary { background: #fff; color: var(--navy); }
+    .btn-primary:hover { background: #e6f0fa; }
+    .btn-ghost { color: #fff; border-color: rgba(255,255,255,.4); }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 52px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.78); font-size: .92rem; }
+    .facts strong { color: #fff; }
 
-    .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
-    .contact dt { font-weight: 600; }
-    .contact dd { margin: 0; overflow-wrap: anywhere; }
+    /* Sections */
+    section { padding: 80px 0; }
+    section.alt { background: var(--bg-alt); }
+    .sec-head { max-width: 640px; margin-bottom: 40px; }
+    .kicker { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-bottom: 12px; }
+    .sec-head p { color: var(--muted); margin: 0; }
 
-    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .9rem; text-align: center; }
+    /* Services */
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; box-shadow: var(--shadow); }
+    .card .ico { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(15,111,184,.12), rgba(25,163,160,.16)); color: var(--accent); }
+    .card .ico svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: .94rem; margin: 0; }
+
+    /* Tech strip */
+    .tech { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
+    .tech span { font-size: .85rem; font-weight: 600; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); }
+
+    /* About */
+    .about { display: grid; gap: 48px; grid-template-columns: 1.4fr 1fr; align-items: start; }
+    @media (max-width: 800px) { .about { grid-template-columns: 1fr; gap: 32px; } }
+    .about p { color: var(--muted); }
+    .about p:first-of-type { color: var(--ink); font-size: 1.08rem; }
+    .profile { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; box-shadow: var(--shadow); }
+    .profile h3 { font-size: 1.15rem; }
+    .profile .role { color: var(--muted); font-size: .92rem; margin: 2px 0 18px; }
+    .profile dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 10px 18px; font-size: .94rem; }
+    .profile dt { color: var(--muted); }
+    .profile dd { margin: 0; font-weight: 600; }
+
+    /* Engagement */
+    .two { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .two .card h3 { font-size: 1.15rem; }
+    .note { margin-top: 24px; color: var(--muted); font-size: .95rem; }
+
+    /* Contact */
+    .contact { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; text-align: center; }
+    .contact h2 { color: #fff; }
+    .contact p { color: rgba(255,255,255,.78); max-width: 52ch; margin: 0 auto 28px; }
+    .contact .btns { justify-content: center; }
+    .contact .alt-link { margin-top: 24px; font-size: .95rem; }
+    .contact .alt-link a { color: #7fd9d5; }
+
+    footer { background: #08182a; color: rgba(255,255,255,.6); padding: 24px 0; font-size: .88rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+    footer a { color: rgba(255,255,255,.8); }
   </style>
 </head>
 <body>
 
-  <header>
+  <div class="topbar">
     <div class="wrap">
-      <div class="brand">Anati Labs</div>
-      <h1>Cloud &amp; DevOps consulting</h1>
-      <p class="lead">Remote cloud architecture and platform engineering for organizations worldwide.</p>
+      <a href="#top" class="logo"><img src="favicon.svg" alt="" width="28" height="28"> Anati Labs</a>
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#engagement">Engagement</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow">Cloud &amp; DevOps consulting</span>
+      <h1>Reliable, cost-efficient cloud platforms.</h1>
+      <p class="lead">Anati Labs helps organizations design, automate and optimize their cloud infrastructure across AWS, Azure and GCP, working remotely with teams worldwide.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:anoop@anati.in">Get in touch</a>
+        <a class="btn btn-ghost" href="#services">View services</a>
+      </div>
+      <div class="facts">
+        <span><strong>20+ years</strong> of experience</span>
+        <span><strong>AWS · Azure · GCP</strong> and hybrid</span>
+        <span><strong>Remote</strong> engagements, based in Kochi, India</span>
+      </div>
     </div>
   </header>
 
   <section id="services" class="alt">
     <div class="wrap">
-      <h2>Services</h2>
+      <div class="sec-head">
+        <div class="kicker">Services</div>
+        <h2>What I help with</h2>
+        <p>From architecture and migration through to day-to-day delivery automation and cost control.</p>
+      </div>
       <div class="grid">
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/></svg></div>
           <h3>Cloud architecture &amp; migration</h3>
           <p>Architecture design and migration strategy across AWS, Azure, GCP and hybrid environments, including multi-region transformations.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
           <h3>Infrastructure as Code</h3>
-          <p>Repeatable, reviewable infrastructure with Terraform, Ansible and CloudFormation, with standardized modules and state management.</p>
+          <p>Repeatable, reviewable infrastructure with Terraform, Ansible and CloudFormation, built on standardized modules.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z"/><circle cx="12" cy="12" r="3"/></svg></div>
           <h3>Kubernetes &amp; GitOps</h3>
           <p>GKE and EKS platforms with GitOps delivery using ArgoCD and Kargo.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.4 6.3M3 12a9 9 0 0 1 15.4-6.3M18 2v4h-4M6 22v-4h4"/></svg></div>
           <h3>DevOps &amp; CI/CD automation</h3>
           <p>Build and release pipelines, standardized delivery processes, and enablement of DevOps and SRE teams.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V4M16 20v-6M22 20H2"/></svg></div>
           <h3>FinOps &amp; cost optimization</h3>
           <p>Visibility into cloud spend and practical changes that reduce it without hurting reliability.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></div>
           <h3>Observability &amp; monitoring</h3>
           <p>Metrics, logging, tracing and alerting frameworks suited to production workloads.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Security, IAM &amp; secrets</h3>
           <p>Cloud security, identity and access management, and secrets management.</p>
         </div>
         <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"/></svg></div>
           <h3>Networking</h3>
           <p>Network design for cloud and hybrid environments: VPCs, connectivity, DNS and load balancing.</p>
         </div>
+      </div>
+      <div class="tech" aria-label="Technologies">
+        <span>AWS</span><span>Azure</span><span>GCP</span><span>Kubernetes</span><span>GKE</span><span>EKS</span>
+        <span>Terraform</span><span>Ansible</span><span>CloudFormation</span><span>ArgoCD</span><span>Kargo</span>
       </div>
     </div>
   </section>
 
   <section id="about">
-    <div class="wrap">
-      <h2>About</h2>
-      <p>Anati Labs is a consulting practice based in Kochi, India, founded by Anoop P, a Cloud Architect and DevOps leader with over 20 years of experience designing, implementing and optimizing scalable infrastructure.</p>
-      <p>Recent work includes leading platform engineering for a GCP-based Kubernetes platform, built end to end on Terraform, delivered with GitOps and backed by production-grade observability. That included a full production region migration and the decommissioning of the legacy environment.</p>
-      <p>Engagements are remote, with clients overseas.</p>
+    <div class="wrap about">
+      <div>
+        <div class="kicker">About</div>
+        <h2>Hands-on cloud leadership</h2>
+        <p>Anati Labs is a consulting practice founded by Anoop P, a Cloud Architect and DevOps leader with over 20 years of experience designing, implementing and optimizing scalable infrastructure.</p>
+        <p>Over the years that has included multi-region cloud transformations, standardized delivery processes, and building DevOps and SRE teams. Most recently it meant leading platform engineering for a GCP-based Kubernetes platform, built end to end on Terraform, delivered with GitOps and backed by production-grade observability, including a full production region migration and the decommissioning of the legacy environment.</p>
+        <p>The aim is always practical, reliable and cost-efficient cloud solutions that line up with business goals.</p>
+      </div>
+      <aside class="profile">
+        <h3>Anoop P</h3>
+        <div class="role">Founder, Cloud Architect &amp; DevOps Leader</div>
+        <dl>
+          <dt>Experience</dt><dd>20+ years</dd>
+          <dt>Location</dt><dd>Kochi, India</dd>
+          <dt>Working mode</dt><dd>Remote</dd>
+          <dt>Clients</dt><dd>Overseas</dd>
+          <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/anoop-p/" rel="noopener">anoop-p</a></dd>
+        </dl>
+      </aside>
     </div>
   </section>
 
-  <section id="how" class="alt">
+  <section id="engagement" class="alt">
     <div class="wrap">
-      <h2>How I work</h2>
-      <p>Work is organized either as a <strong>monthly retainer</strong> or as a <strong>fixed-scope project</strong>. Either way, it is invoiced monthly.</p>
+      <div class="sec-head">
+        <div class="kicker">Engagement</div>
+        <h2>How I work</h2>
+        <p>Two simple models, depending on whether the need is ongoing or has a defined end.</p>
+      </div>
+      <div class="two">
+        <div class="card">
+          <h3>Monthly retainer</h3>
+          <p>Ongoing access for platform support, reviews and improvements.</p>
+        </div>
+        <div class="card">
+          <h3>Project engagement</h3>
+          <p>A defined scope, such as a migration, a platform build or a CI/CD overhaul.</p>
+        </div>
+      </div>
+      <p class="note">Both models are invoiced monthly.</p>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2>Contact</h2>
-      <dl>
-        <dt>Email</dt>
-        <dd><a href="mailto:anoop@anati.in">anoop@anati.in</a></dd>
-        <dt>LinkedIn</dt>
-        <dd><a href="https://www.linkedin.com/in/anoop-p/" rel="noopener">linkedin.com/in/anoop-p</a></dd>
-      </dl>
+      <div class="kicker" style="color:#7fd9d5">Contact</div>
+      <h2>Let's talk about your cloud platform</h2>
+      <p>Send a short note about what you're working on and I'll reply by email.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:anoop@anati.in">anoop@anati.in</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/anoop-p/" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div class="wrap">Anati Labs · Kochi, India</div>
+    <div class="wrap">
+      <span>Anati Labs · Kochi, India</span>
+      <span><a href="mailto:anoop@anati.in">anoop@anati.in</a></span>
+    </div>
   </footer>
 
 </body>
